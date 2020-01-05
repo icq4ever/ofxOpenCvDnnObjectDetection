@@ -1,5 +1,13 @@
-bin/data/*.mp4
-bin/data/*.MTS
+*.mp4
+*.MTS
+
+*.vscode*
+*.tar.gz
+*-Debug*
+*-Release*
+obj/
+camera
+*_debug
 # Prerequisites
 *.d
 

@@ -9,11 +9,13 @@ public:
     void update();
     void draw();
 
-    ofVideoGrabber camera;
+    // ofVideoGrabber camera;
+    ofVideoPlayer camera;
     ofxOpenCvDnnObjectDetection detector;
     
     void keyPressed(int key);
     ofImage img;
     uint64_t detection_time;
 
+	vector<ofPoint> pedestrianPoints;
 };
