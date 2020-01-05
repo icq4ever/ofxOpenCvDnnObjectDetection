@@ -14,7 +14,7 @@ See Examples for more details
 Detection example for single image.
 
 ### camera
-Realtime Detection example for webcam video.
+Realtime Detection example for webcam video & video
 
 ### annotation
 ![annotation screenshot](/sample_images/annotation.png)
@@ -37,6 +37,7 @@ My annotation software to export a yolo format. It enables you to annotate image
 ![sample_images/result_sample02.gif](sample_images/result_sample02.gif)
 ## Compatibility
 - only macOS ( tested on Catalina 10.15)
+- linux 64 (arch based manjaro linux419 tested)
 - oF version: 0.11.0
 
 ## Licence
@@ -51,4 +52,3 @@ My annotation software to export a yolo format. It enables you to annotate image
 ## Reference
 1. Model Zoo on OpenCV DNN Module README page: https://github.com/opencv/opencv/blob/master/samples/dnn/README.md
 2. How to implement OpenCV Yolo on Openframeworks: https://qiita.com/buchayaty/items/4020100f531c07418f38
-
