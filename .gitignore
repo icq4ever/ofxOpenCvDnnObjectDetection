@@ -1,3 +1,5 @@
+bin/data/*.mp4
+bin/data/*.MTS
 # Prerequisites
 *.d
 
