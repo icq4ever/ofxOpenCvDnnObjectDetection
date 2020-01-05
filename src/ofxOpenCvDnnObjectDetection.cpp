@@ -74,6 +74,7 @@ Object::~Object()
     
 }
 
+
 // Constructor
 ofxOpenCvDnnObjectDetection::ofxOpenCvDnnObjectDetection()
 {
@@ -203,7 +204,7 @@ void ofxOpenCvDnnObjectDetection::keyPressed(ofKeyEventArgs &e)
         darkmode = !darkmode;
     }
     else if( key == 'o' ){
-        ofSystem("open "+ofToDataPath("dnn/"));
+        ofSystem("thunar "+ofToDataPath("dnn/"));
     }
     else if( key == OF_KEY_SHIFT ){
         is_shift_pressed = true;
@@ -216,6 +217,7 @@ void ofxOpenCvDnnObjectDetection::keyPressed(ofKeyEventArgs &e)
         b_ai_checker = true;
     }
 }
+
 
 void ofxOpenCvDnnObjectDetection::keyReleased(ofKeyEventArgs &e)
 {
@@ -230,6 +232,15 @@ void ofxOpenCvDnnObjectDetection::keyReleased(ofKeyEventArgs &e)
     if( key == OF_KEY_SUPER ){
         b_magnify_pointing = false;
     }
+}
+
+ofPoint Object::getPoint(float _x, float _y, float _w, float _h){
+	ofPoint loc;
+	loc.set(
+				(r.x*_w+_x + r.width*_w/2),
+				(r.y*_h+_y + r.height*_h)
+			);
+	return loc;
 }
 
 ofRectangle Object::getScaledBB(float _x, float _y, float _w, float _h)
