@@ -234,7 +234,7 @@ void ofxOpenCvDnnObjectDetection::keyReleased(ofKeyEventArgs &e)
     }
 }
 
-ofPoint Object::getPoint(float _x, float _y, float _w, float _h){
+ofPoint Object::getCenterPoint(float _x, float _y, float _w, float _h){
 	ofPoint loc;
 	loc.set(
 				(r.x*_w+_x + r.width*_w/2),
@@ -334,6 +334,8 @@ cv::Mat ofxOpenCvDnnObjectDetection::toCV(ofPixels &pix)
     return cv::Mat(pix.getHeight(), pix.getWidth(), CV_MAKETYPE(CV_8U, pix.getNumChannels()), pix.getData(), 0);
 }
 
+
+//
 void ofxOpenCvDnnObjectDetection::postprocess(Mat& frame, const std::vector<Mat>& outs, Net& net)
 {
 
@@ -668,9 +670,11 @@ void ofxOpenCvDnnObjectDetection::updateControls()
         b_ai_checker = false;
     }
 }
+
+
+// start detection
 void ofxOpenCvDnnObjectDetection::update(ofPixels &op)
 {
-//    setConfidenceThreshold(threshold);
     object.clear();
     
     cv::Mat frame = toCV(op);
@@ -733,6 +737,7 @@ void ofxOpenCvDnnObjectDetection::setupAnnotationGui()
     gui_basic.add(threshold_precision.set("Precision Threshold", 0.8, 0.0, 1.0));
     enableAnnotationControl();
 }
+
 void ofxOpenCvDnnObjectDetection::setup(string _path_to_cfg, string _path_to_weights, string _path_to_names)
 {
     mode_annotation = MODE_SELECT_ANNOTATION;

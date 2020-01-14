@@ -42,8 +42,6 @@ public:
     string name;
     ofRectangle r;
     ofRectangle getScaledBB(float _w, float _h);
-
-    
 };
 
 class Object{
@@ -52,7 +50,7 @@ public:
     Object(int _class_id, string _name, float _p, float _x, float _y, float _w, float _h);
     ~Object();
     ofRectangle r;
-	ofPoint getPoint(float _x, float _y, float _w, float _h);
+	ofPoint getCenterPoint(float _x, float _y, float _w, float _h);
     ofRectangle getScaledBB(float _w, float _h);
     ofRectangle getScaledBB(float _x, float _y, float _w, float _h);
     string name;
